@@ -55,7 +55,7 @@ INSERT INTO employees (employee_id, role_id, branch_id, first_name, last_name, e
 
 --Insert records for vehicles
 INSERT INTO vehicles (vehicle_id, status_id, employee_id, model_id, vin, manfac_year, price, specifications, record_date) VALUES
-('VH001', 'AV', 1, 1, 'VIN1234567', 2022, 25000.00, 
+('VH001', 'AV', 1, 2, 'VIN1234567', 2022, 25000.00, 
 '<specifications>
     <engine>
         <type>V6</type>
@@ -72,7 +72,7 @@ INSERT INTO vehicles (vehicle_id, status_id, employee_id, model_id, vin, manfac_
 </specifications>', 
 '2023-01-01'),
 
-('VH002', 'SL', 2, 2, 'VIN2345678', 2021, 22000.00, 
+('VH002', 'SL', 2, 4, 'VIN2345678', 2021, 22000.00, 
 '<specifications>
     <engine>
         <type>I4</type>
@@ -89,7 +89,7 @@ INSERT INTO vehicles (vehicle_id, status_id, employee_id, model_id, vin, manfac_
 </specifications>', 
 '2023-02-15'),
 
-('VH003', 'AV', 3, 3, 'VIN3456789', 2023, 55000.00, 
+('VH003', 'AV', 3, 4, 'VIN3456789', 2023, 55000.00, 
 '<specifications>
     <engine>
         <type>V8</type>
@@ -123,7 +123,7 @@ INSERT INTO vehicles (vehicle_id, status_id, employee_id, model_id, vin, manfac_
 </specifications>', 
 '2023-04-20'),
 
-('VH005', 'SL', 5, 5, 'VIN5678901', 2023, 35000.00, 
+('VH005', 'SL', 5, 2, 'VIN5678901', 2023, 35000.00, 
 '<specifications>
     <engine>
         <type>Electric</type>
