@@ -1,5 +1,7 @@
 create database car_dealership;
-use car_dealership;
+create database car_dealership_new;
+
+use car_dealership_new;
 --creating tables
 
 CREATE TABLE roles (
@@ -52,7 +54,7 @@ CREATE TABLE model (
     model_id INT IDENTITY(1,1) PRIMARY KEY,
     make_id INT NOT NULL,
     model VARCHAR(50) NOT NULL,
-	CONSTRAINT Model_Make_FK FOREIGN KEY (make_id) REFERENCES make(make_id),
+	CONSTRAINT Model_Make_FK FOREIGN KEY (make_id) REFERENCES make(make_id)
 );
 
 CREATE TABLE vehicles (
@@ -78,8 +80,8 @@ CREATE TABLE sales (
     sale_date DATE,
     price DECIMAL(10,2),
 	CONSTRAINT FK_Sales_Customers FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE,
-	CONSTRAINT FK_Sales_Vehicles FOREIGN KEY (vehicle_id) REFERENCES vehicles(vehicle_id) ON DELETE CASCADE,
-	CONSTRAINT FK_Sales_Employees FOREIGN KEY (employee_id) REFERENCES employees(employee_id) ON DELETE NO ACTION
+	CONSTRAINT FK_Sales_Vehicles FOREIGN KEY (vehicle_id) REFERENCES vehicles(vehicle_id) ON DELETE NO ACTION,
+	CONSTRAINT FK_Sales_Employees FOREIGN KEY (employee_id) REFERENCES employees(employee_id) ON DELETE CASCADE
 );
 
 CREATE TABLE service_records (
@@ -108,3 +110,5 @@ CREATE TABLE cash_book (
     transaction_date DATE,
 	CONSTRAINT CashBook_Vehicles_Fk FOREIGN KEY (vehicle_id) REFERENCES vehicles(vehicle_id) ON DELETE CASCADE
 );
+
+DROP TABLE IF EXISTS service_records;
