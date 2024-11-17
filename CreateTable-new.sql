@@ -111,4 +111,3 @@ CREATE TABLE cash_book (
 	CONSTRAINT CashBook_Vehicles_Fk FOREIGN KEY (vehicle_id) REFERENCES vehicles(vehicle_id) ON DELETE CASCADE
 );
 
-DROP TABLE IF EXISTS service_records;
