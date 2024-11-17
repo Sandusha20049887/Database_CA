@@ -1,4 +1,4 @@
-create database car_dealership;
+
 create database car_dealership_new;
 
 use car_dealership_new;
