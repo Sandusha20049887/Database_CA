@@ -23,12 +23,12 @@ CREATE TABLE make (
 
 CREATE TABLE status (
     status_id VARCHAR(2) PRIMARY KEY,
-    status_description VARCHAR(20) NOT NULL
+    status_description VARCHAR(20) 
 );
 
 CREATE TABLE customers (
     customer_id INT IDENTITY(1,1) PRIMARY KEY,
-    first_name VARCHAR(50) NOT NULL,
+    first_name VARCHAR(50),
     last_name VARCHAR(50) NOT NULL,
     email VARCHAR(50) UNIQUE NOT NULL,
     phone VARCHAR(15),
@@ -40,9 +40,9 @@ CREATE TABLE employees (
     employee_id INT IDENTITY(1,1) PRIMARY KEY,
     role_id VARCHAR(10) NOT NULL,
     branch_id VARCHAR(5) NOT NULL,
-    first_name VARCHAR(50) NOT NULL,
+    first_name VARCHAR(50),
     last_name VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL,
+    email VARCHAR(50) UNIQUE NOT NULL,
     phone VARCHAR(15),
     joined_date DATE,
 	CONSTRAINT Employees_Roles_Fk FOREIGN KEY (role_id) REFERENCES roles(role_id) ON DELETE CASCADE,
