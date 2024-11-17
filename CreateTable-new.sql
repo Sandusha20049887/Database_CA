@@ -105,8 +105,8 @@ CREATE TABLE media (
 CREATE TABLE cash_book (
     cash_book_id INT IDENTITY(1,1) PRIMARY KEY,
     vehicle_id VARCHAR(7),
-    debited_amount DECIMAL(10,2),
-    credited_amount DECIMAL(10,2),
+    debited_amount DECIMAL(10,2) DEFAULT 0.00,
+    credited_amount DECIMAL(10,2) DEFAULT 0.00,
     transaction_date DATE,
 	CONSTRAINT CashBook_Vehicles_Fk FOREIGN KEY (vehicle_id) REFERENCES vehicles(vehicle_id) ON DELETE CASCADE
 );
