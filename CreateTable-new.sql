@@ -79,7 +79,7 @@ CREATE TABLE sales (
     price DECIMAL(10,2),
 	CONSTRAINT FK_Sales_Customers FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE,
 	CONSTRAINT FK_Sales_Vehicles FOREIGN KEY (vehicle_id) REFERENCES vehicles(vehicle_id) ON DELETE CASCADE,
-	CONSTRAINT FK_Sales_Employees FOREIGN KEY (employee_id) REFERENCES employees(employee_id) ON DELETE CASCADE
+	CONSTRAINT FK_Sales_Employees FOREIGN KEY (employee_id) REFERENCES employees(employee_id) ON DELETE NO ACTION
 );
 
 CREATE TABLE service_records (
@@ -90,7 +90,7 @@ CREATE TABLE service_records (
     cost DECIMAL(10,2),
     service_details XML,
 	CONSTRAINT ServiceRecords_Vehicles_Fk FOREIGN KEY (vehicle_id) REFERENCES vehicles(vehicle_id) ON DELETE CASCADE,
-	CONSTRAINT ServiceRecords_Branches_Fk FOREIGN KEY (branch_id) REFERENCES branches(branch_id) ON DELETE CASCADE
+	CONSTRAINT ServiceRecords_Branches_Fk FOREIGN KEY (branch_id) REFERENCES branches(branch_id) ON DELETE NO ACTION
 );
 
 CREATE TABLE media (
