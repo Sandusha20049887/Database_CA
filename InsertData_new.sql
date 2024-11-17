@@ -15,20 +15,20 @@ INSERT INTO branches (branch_id, branch_name, branch_address, phone) VALUES
 ('B005', 'East Branch', '202 East Blvd, Wexford, Ireland', '+35345678901');
 
 --Insert records for make
-INSERT INTO make (make_id, make) VALUES
-(1, 'Toyota'),
-(2, 'Honda'),
-(3, 'Ford'),
-(4, 'BMW'),
-(5, 'Tesla');
+INSERT INTO make (make) VALUES
+('Toyota'),
+('Honda'),
+('Ford'),
+('BMW'),
+('Tesla');
 
 --Insert records for model
-INSERT INTO model (model_id, make_id, model) VALUES
-(1, 1, 'Corolla'),
-(2, 2, 'Civic'),
-(3, 3, 'Mustang'),
-(4, 4, 'X5'),
-(5, 5, 'Model 3');
+INSERT INTO model (make_id, model) VALUES
+(1, 'Corolla'),
+(2, 'Civic'),
+(3, 'Mustang'),
+(4, 'X5'),
+(5, 'Model 3');
 
 
 --Insert records for status
@@ -38,24 +38,24 @@ INSERT INTO status (status_id, status_description) VALUES
 ('RS', 'Reserved');
 
 --Insert records for customers
-INSERT INTO customers (customer_id, first_name, last_name, email, phone, address, registered_date) VALUES
-(1, 'John', 'Doe', 'john.doe@example.com', '+353876543210', 'Apartment 101, Dublin, Ireland', '2023-01-15'),
-(2, 'Jane', 'Smith', 'jane.smith@example.com', '+353876543211', '56 Cork Rd, Cork, Ireland', '2023-03-10'),
-(3, 'Michael', 'Brown', 'michael.brown@example.com', '+353876543212', '12 Galway St, Galway, Ireland', '2023-05-20'),
-(4, 'Emily', 'Davis', 'emily.davis@example.com', '+353876543213', '89 Wexford Ave, Wexford, Ireland', '2023-07-05'),
-(5, 'Sarah', 'Wilson', 'sarah.wilson@example.com', '+353876543214', '23 Belfast Lane, Belfast, Ireland', '2023-09-01');
+INSERT INTO customers (first_name, last_name, email, phone, address, registered_date) VALUES
+('John', 'Doe', 'john.doe@example.com', '+353876543210', 'Apartment 101, Dublin, Ireland', '2023-01-15'),
+('Jane', 'Smith', 'jane.smith@example.com', '+353876543211', '56 Cork Rd, Cork, Ireland', '2023-03-10'),
+('Michael', 'Brown', 'michael.brown@example.com', '+353876543212', '12 Galway St, Galway, Ireland', '2023-05-20'),
+('Emily', 'Davis', 'emily.davis@example.com', '+353876543213', '89 Wexford Ave, Wexford, Ireland', '2023-07-05'),
+('Sarah', 'Wilson', 'sarah.wilson@example.com', '+353876543214', '23 Belfast Lane, Belfast, Ireland', '2023-09-01');
 
 --Insert records for employees
-INSERT INTO employees (employee_id, role_id, branch_id, first_name, last_name, email, phone, joined_date) VALUES
-(1, 'R001', 'B001', 'Alice', 'Johnson', 'alice.johnson@company.com', '+353876543215', '2020-01-10'),
-(2, 'R002', 'B001', 'Bob', 'Miller', 'bob.miller@company.com', '+353876543216', '2021-03-15'),
-(3, 'R003', 'B002', 'Charlie', 'Anderson', 'charlie.anderson@company.com', '+353876543217', '2022-05-20'),
-(4, 'R002', 'B003', 'Diana', 'Moore', 'diana.moore@company.com', '+353876543218', '2021-07-30'),
-(5, 'R003', 'B004', 'Edward', 'Taylor', 'edward.taylor@company.com', '+353876543219', '2019-11-25');
+INSERT INTO employees (role_id, branch_id, first_name, last_name, email, phone, joined_date) VALUES
+('R001', 'B001', 'Alice', 'Johnson', 'alice.johnson@company.com', '+353876543215', '2020-01-10'),
+('R002', 'B001', 'Bob', 'Miller', 'bob.miller@company.com', '+353876543216', '2021-03-15'),
+('R003', 'B002', 'Charlie', 'Anderson', 'charlie.anderson@company.com', '+353876543217', '2022-05-20'),
+('R002', 'B003', 'Diana', 'Moore', 'diana.moore@company.com', '+353876543218', '2021-07-30'),
+('R003', 'B004', 'Edward', 'Taylor', 'edward.taylor@company.com', '+353876543219', '2019-11-25');
 
 --Insert records for vehicles
 INSERT INTO vehicles (vehicle_id, status_id, employee_id, model_id, vin, manfac_year, price, specifications, record_date) VALUES
-('VH001', 'AV', 1, 2, 'VIN1234567', 2022, 25000.00, 
+('VH001', 'AV', 2, 2, 'VIN1234567', 2022, 25000.00, 
 '<specifications>
     <engine>
         <type>V6</type>
@@ -89,7 +89,7 @@ INSERT INTO vehicles (vehicle_id, status_id, employee_id, model_id, vin, manfac_
 </specifications>', 
 '2023-02-15'),
 
-('VH003', 'AV', 3, 4, 'VIN3456789', 2023, 55000.00, 
+('VH003', 'AV', 4, 4, 'VIN3456789', 2023, 55000.00, 
 '<specifications>
     <engine>
         <type>V8</type>
@@ -123,7 +123,7 @@ INSERT INTO vehicles (vehicle_id, status_id, employee_id, model_id, vin, manfac_
 </specifications>', 
 '2023-04-20'),
 
-('VH005', 'SL', 5, 2, 'VIN5678901', 2023, 35000.00, 
+('VH005', 'SL', 2, 2, 'VIN5678901', 2023, 35000.00, 
 '<specifications>
     <engine>
         <type>Electric</type>
@@ -141,14 +141,14 @@ INSERT INTO vehicles (vehicle_id, status_id, employee_id, model_id, vin, manfac_
 '2023-05-25');
 
 --Insert records to sales table
-INSERT INTO sales (sales_id, customer_id, vehicle_id, employee_id, sale_date, price) VALUES
-(1, 1, 'VH002', 2, '2023-06-10', 22000.00),
-(2, 2, 'VH005', 2, '2023-09-10', 35000.00),
-(3, 3, 'VH004', 4, '2023-08-01', 70000.00);
+INSERT INTO sales (customer_id, vehicle_id, employee_id, sale_date, price) VALUES
+(1, 'VH002', 2, '2023-06-10', 22000.00),
+(2, 'VH005', 2, '2023-09-10', 35000.00),
+(3, 'VH004', 4, '2023-08-01', 70000.00);
 
 --Insert records to service_records table
-INSERT INTO service_records (service_id, vehicle_id, branch_id, service_date, cost, service_details) VALUES
-(1, 'VH001', 'B001', '2023-03-01', 100.00, 
+INSERT INTO service_records (vehicle_id, branch_id, service_date, cost, service_details) VALUES
+('VH001', 'B002', '2023-03-01', 100.00, 
 '<serviceDetails>
     <services>
         <service>
@@ -167,12 +167,11 @@ INSERT INTO service_records (service_id, vehicle_id, branch_id, service_date, co
     </services>
     <technician>
         <id>3</id>
-        <name>Charlie Anderson</name>
         <notes>Regular maintenance completed</notes>
     </technician>
 </serviceDetails>'),
 
-(2, 'VH003', 'B002', '2023-04-10', 250.00, 
+('VH003', 'B002', '2023-04-10', 250.00, 
 '<serviceDetails>
     <services>
         <service>
@@ -190,13 +189,12 @@ INSERT INTO service_records (service_id, vehicle_id, branch_id, service_date, co
         </service>
     </services>
     <technician>
-        <id>5</id>
-        <name>Edward Taylor</name>
+        <id>3</id>
         <notes>Tires replaced and balanced</notes>
     </technician>
 </serviceDetails>'),
 
-(3, 'VH004', 'B003', '2023-05-20', 300.00, 
+('VH004', 'B004', '2023-05-20', 300.00, 
 '<serviceDetails>
     <services>
         <service>
@@ -214,13 +212,12 @@ INSERT INTO service_records (service_id, vehicle_id, branch_id, service_date, co
         </service>
     </services>
     <technician>
-        <id>3</id>
-        <name>Charlie Anderson</name>
+        <id>5</id>
         <notes>Engine performance restored</notes>
     </technician>
 </serviceDetails>'),
 
-(4, 'VH005', 'B004', '2023-06-15', 180.00, 
+('VH005', 'B004', '2023-06-15', 180.00, 
 '<serviceDetails>
     <services>
         <service>
@@ -239,24 +236,23 @@ INSERT INTO service_records (service_id, vehicle_id, branch_id, service_date, co
     </services>
     <technician>
         <id>5</id>
-        <name>Edward Taylor</name>
         <notes>Brakes replaced and tested</notes>
     </technician>
 </serviceDetails>');
 
 --Insert recored to service_records table
-INSERT INTO media (media_id, vehicle_id, media_path) VALUES
-(1, 'VH001', '/media/VH001_front.jpg'),
-(2, 'VH002', '/media/VH002_side.jpg'),
-(3, 'VH003', '/media/VH003_rear.jpg'),
-(4, 'VH004', '/media/VH004_interior.jpg');
+INSERT INTO media (vehicle_id, media_path) VALUES
+('VH001', '/media/VH001_front.jpg'),
+('VH002', '/media/VH002_side.jpg'),
+('VH003', '/media/VH003_rear.jpg'),
+('VH004', '/media/VH004_interior.jpg');
 
 --Insert recored to cash_book table
-INSERT INTO cash_book (cash_book_id, vehicle_id, debited_amount, credited_amount, transaction_date) VALUES
-(1, 'VH001', 18000.00, 0.00, '2023-01-01'),
-(2, 'VH002', 20000.00, 0.00, '2023-02-01'),
-(3, 'VH003', 45000.00, 0.00, '2023-03-10'),
-(4, 'VH004', 65000.00, 0.00, '2023-04-20'),
-(5, 'VH005', 30000.00, 0.00, '2023-05-01'),
-(6, 'VH002', 0.00, 22000.00, '2023-06-10'),
-(7, 'VH005', 0.00, 35000.00, '2023-09-10');
+INSERT INTO cash_book (vehicle_id, debited_amount, credited_amount, transaction_date) VALUES
+('VH001', 18000.00, 0.00, '2023-01-01'),
+('VH002', 20000.00, 0.00, '2023-02-01'),
+('VH003', 45000.00, 0.00, '2023-03-10'),
+('VH004', 65000.00, 0.00, '2023-04-20'),
+('VH005', 30000.00, 0.00, '2023-05-01'),
+('VH002', 0.00, 22000.00, '2023-06-10'),
+('VH005', 0.00, 35000.00, '2023-09-10');
