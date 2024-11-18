@@ -1,7 +1,7 @@
 
-create database car_dealership_new;
+create database car_dealership_group7;
 
-use car_dealership_new;
+use car_dealership_group07;
 --creating tables
 
 CREATE TABLE roles (
