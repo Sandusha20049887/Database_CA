@@ -4,7 +4,7 @@ ON vehicles
 AFTER INSERT
 AS
 BEGIN
-    INSERT INTO cash_book (vehicle_id, debited_amount, transaction_date)
+    INSERT INTO cash_book (vehicle_id, debited_amount, date)
     SELECT 
         vehicle_id, price, record_date     
     FROM 
@@ -20,11 +20,11 @@ BEGIN
     -- Update vehicles table to set status to 'Sold' 
     UPDATE vehicles 
     SET status_id = 'SL' 
-    FROM vehicles 
+    FROM vehicles v
     JOIN inserted i ON v.vehicle_id = i.vehicle_id;
 
     -- Insert into cash_book table
-    INSERT INTO cash_book (vehicle_id, credited_amount, transaction_date)
+    INSERT INTO cash_book (vehicle_id, credited_amount, date)
     SELECT 
         vehicle_id, price, sale_date
     FROM 

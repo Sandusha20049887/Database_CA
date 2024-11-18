@@ -1,6 +1,6 @@
 -- 1) create a view to get all the vehicles
 CREATE VIEW all_vehicles AS
-SELECT vehicle_id,status.status_id,status.status_description,employee_id,manfac_year,price,specifications,record_date,model.model_id,model,make.make_id,make
+SELECT vehicle_id,status.status_id,status.status,employee_id,year,price,specifications,record_date,model.model_id,model,make.make_id,make
 FROM vehicles
 INNER JOIN model 
 ON vehicles.model_id = model.model_id
