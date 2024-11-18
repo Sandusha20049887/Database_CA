@@ -1,4 +1,4 @@
---Trigger to update cashbook when vehicle purchase from car dealership
+--Trigger to update cashbook for vehicle purchases from car dealership
 CREATE TRIGGER UpdateCashBookOnVehicleAdd
 ON vehicles
 AFTER INSERT
@@ -11,7 +11,7 @@ BEGIN
         inserted;
 END;
 
-----Trigger to update cashbook when vehicle sales from car dealership and update vehicle status as sold
+----Trigger to update cashbook for vehicle sales from car dealership and update vehicle status as sold
 CREATE TRIGGER UpdateCashBookOnVehicleSale
 ON sales
 AFTER INSERT
