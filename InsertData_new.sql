@@ -150,21 +150,19 @@ INSERT INTO sales (customer_id, vehicle_id, employee_id, sale_date, price) VALUE
 INSERT INTO service_records (vehicle_id, branch_id, service_date, cost, service_details) VALUES
 ('VH001', 'B002', '2023-03-01', 100.00, 
 '<serviceDetails>
-    <services>
-        <service>
-            <type>Oil Change</type>
-            <parts>
-                <part>
-                    <name>Oil Filter</name>
-                    <cost>15.99</cost>
-                </part>
-                <part>
-                    <name>Synthetic Oil</name>
-                    <cost>45.99</cost>
-                </part>
-            </parts>
-        </service>
-    </services>
+    <service>
+        <type>Oil Change</type>
+        <parts>
+            <part>
+                <name>Oil Filter</name>
+                <cost>15.99</cost>
+            </part>
+            <part>
+                <name>Synthetic Oil</name>
+                <cost>45.99</cost>
+            </part>
+        </parts>
+    </service>
     <technician>
         <id>3</id>
         <notes>Regular maintenance completed</notes>
@@ -173,21 +171,19 @@ INSERT INTO service_records (vehicle_id, branch_id, service_date, cost, service_
 
 ('VH003', 'B002', '2023-04-10', 250.00, 
 '<serviceDetails>
-    <services>
-        <service>
-            <type>Tire Replacement</type>
-            <parts>
-                <part>
-                    <name>Front Tire</name>
-                    <cost>120.00</cost>
-                </part>
-                <part>
-                    <name>Rear Tire</name>
-                    <cost>120.00</cost>
-                </part>
-            </parts>
-        </service>
-    </services>
+    <service>
+        <type>Tire Replacement</type>
+        <parts>
+            <part>
+                <name>Front Tire</name>
+                <cost>120.00</cost>
+            </part>
+            <part>
+                <name>Rear Tire</name>
+                <cost>120.00</cost>
+            </part>
+        </parts>
+    </service>
     <technician>
         <id>3</id>
         <notes>Tires replaced and balanced</notes>
@@ -196,21 +192,19 @@ INSERT INTO service_records (vehicle_id, branch_id, service_date, cost, service_
 
 ('VH004', 'B004', '2023-05-20', 300.00, 
 '<serviceDetails>
-    <services>
-        <service>
-            <type>Engine Diagnostics</type>
-            <parts>
-                <part>
-                    <name>Spark Plugs</name>
-                    <cost>60.00</cost>
-                </part>
-                <part>
-                    <name>Engine Oil</name>
-                    <cost>50.00</cost>
-                </part>
-            </parts>
-        </service>
-    </services>
+    <service>
+        <type>Engine Diagnostics</type>
+        <parts>
+            <part>
+                <name>Spark Plugs</name>
+                <cost>60.00</cost>
+            </part>
+            <part>
+                <name>Engine Oil</name>
+                <cost>50.00</cost>
+            </part>
+        </parts>
+    </service>
     <technician>
         <id>5</id>
         <notes>Engine performance restored</notes>
@@ -219,21 +213,19 @@ INSERT INTO service_records (vehicle_id, branch_id, service_date, cost, service_
 
 ('VH005', 'B004', '2023-06-15', 180.00, 
 '<serviceDetails>
-    <services>
-        <service>
-            <type>Brake Replacement</type>
-            <parts>
-                <part>
-                    <name>Front Brake Pads</name>
-                    <cost>90.00</cost>
-                </part>
-                <part>
-                    <name>Rear Brake Pads</name>
-                    <cost>80.00</cost>
-                </part>
-            </parts>
-        </service>
-    </services>
+    <service>
+        <type>Brake Replacement</type>
+        <parts>
+            <part>
+                <name>Front Brake Pads</name>
+                <cost>90.00</cost>
+            </part>
+            <part>
+                <name>Rear Brake Pads</name>
+                <cost>80.00</cost>
+            </part>
+        </parts>
+    </service>
     <technician>
         <id>5</id>
         <notes>Brakes replaced and tested</notes>
