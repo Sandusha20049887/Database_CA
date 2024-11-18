@@ -1,5 +1,5 @@
 -- Insert records for roles
-INSERT INTO roles (role_id, role_name) VALUES
+INSERT INTO roles (role_id, role) VALUES
 ('R001', 'Manager'),
 ('R002', 'Sales Executive'),
 ('R003', 'Mechanic'),
@@ -7,7 +7,7 @@ INSERT INTO roles (role_id, role_name) VALUES
 ('R005', 'Accountant');
 
 --Insert records for branches
-INSERT INTO branches (branch_id, branch_name, branch_address, phone) VALUES
+INSERT INTO branches (branch_id, branch_name, address, phone) VALUES
 ('B001', 'Central Branch', '123 Main St, Dublin, Ireland', '+35312345678'),
 ('B002', 'South Branch', '456 South Rd, Cork, Ireland', '+35323456789'),
 ('B003', 'West Branch', '789 West St, Galway, Ireland', '+35334567890'),
@@ -32,7 +32,7 @@ INSERT INTO model (make_id, model) VALUES
 
 
 --Insert records for status
-INSERT INTO status (status_id, status_description) VALUES
+INSERT INTO status (status_id, status) VALUES
 ('AV', 'Available'),
 ('SL', 'Sold'),
 ('RS', 'Reserved');
@@ -54,7 +54,7 @@ INSERT INTO employees (role_id, branch_id, first_name, last_name, email, phone, 
 ('R003', 'B004', 'Edward', 'Taylor', 'edward.taylor@company.com', '+353876543219', '2019-11-25');
 
 --Insert records for vehicles
-INSERT INTO vehicles (vehicle_id, status_id, employee_id, model_id, vin, manfac_year, price, specifications, record_date) VALUES
+INSERT INTO vehicles (vehicle_id, status_id, employee_id, model_id, vin, year, price, specifications, record_date) VALUES
 ('VH001', 'AV', 2, 2, 'VIN1234567', 2022, 25000.00, 
 '<specifications>
     <engine>
@@ -248,7 +248,7 @@ INSERT INTO media (vehicle_id, media_path) VALUES
 ('VH004', '/media/VH004_interior.jpg');
 
 --Insert recored to cash_book table
-INSERT INTO cash_book (vehicle_id, debited_amount, credited_amount, transaction_date) VALUES
+INSERT INTO cash_book (vehicle_id, debited_amount, credited_amount, date) VALUES
 ('VH001', 18000.00, 0.00, '2023-01-01'),
 ('VH002', 20000.00, 0.00, '2023-02-01'),
 ('VH003', 45000.00, 0.00, '2023-03-10'),

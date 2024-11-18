@@ -6,13 +6,13 @@ use car_dealership_new;
 
 CREATE TABLE roles (
     role_id VARCHAR(10) PRIMARY KEY,
-    role_name VARCHAR(50) NOT NULL
+    role VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE branches (
     branch_id VARCHAR(5) PRIMARY KEY,
     branch_name VARCHAR(50) NOT NULL,
-    branch_address VARCHAR(500),
+    address VARCHAR(500),
     phone VARCHAR(15)
 );
 
@@ -23,7 +23,7 @@ CREATE TABLE make (
 
 CREATE TABLE status (
     status_id VARCHAR(2) PRIMARY KEY,
-    status_description VARCHAR(20) 
+    status VARCHAR(20) 
 );
 
 CREATE TABLE customers (
@@ -38,8 +38,8 @@ CREATE TABLE customers (
 
 CREATE TABLE employees (
     employee_id INT IDENTITY(1,1) PRIMARY KEY,
-    role_id VARCHAR(10) NOT NULL,
-    branch_id VARCHAR(5) NOT NULL,
+    role_id VARCHAR(10),
+    branch_id VARCHAR(5),
     first_name VARCHAR(50),
     last_name VARCHAR(50) NOT NULL,
     email VARCHAR(50) UNIQUE NOT NULL,
@@ -52,8 +52,8 @@ CREATE TABLE employees (
 
 CREATE TABLE model (
     model_id INT IDENTITY(1,1) PRIMARY KEY,
-    make_id INT NOT NULL,
-    model VARCHAR(50) NOT NULL,
+    make_id INT,
+    model VARCHAR(50),
 	CONSTRAINT Model_Make_FK FOREIGN KEY (make_id) REFERENCES make(make_id)
 );
 
@@ -63,7 +63,7 @@ CREATE TABLE vehicles (
     employee_id INT,
     model_id INT,
     vin VARCHAR(10) UNIQUE NOT NULL,
-    manfac_year INT,
+    year INT,
     price DECIMAL(10,2),
     specifications XML,
     record_date DATE,
@@ -107,7 +107,7 @@ CREATE TABLE cash_book (
     vehicle_id VARCHAR(7),
     debited_amount DECIMAL(10,2) DEFAULT 0.00,
     credited_amount DECIMAL(10,2) DEFAULT 0.00,
-    transaction_date DATE,
+    date DATE,
 	CONSTRAINT CashBook_Vehicles_Fk FOREIGN KEY (vehicle_id) REFERENCES vehicles(vehicle_id) ON DELETE CASCADE
 );
 
